@@ -30,3 +30,29 @@ This is the project you get when you run `gridsome create new-project`.
 Each collection will add two root fields to the GraphQL schema that are used to retrieve nodes in your pages. The field names are auto-generated based on the collection name. If you name the collection Post, you will have these fields available in the schema:
 - `post` Get a single node by id.
 - `allPost` Get a list of nodes. (Can be sorted and filtered.)
+
+#### templates
+- 给`Collections`添加模板, 在 `gridsome.config.js`配置
+```js
+  templates: {
+    // 集合的名称(Post): 规则
+    Post: [
+      {
+        path: '/posts/:id', // `posts`是自定义的(也可以叫articles), 但id 必须是 collection集合中有效的field
+        component: './src/templates/Post.vue'
+        /**
+         * Post.vue中的内容
+         * <page-query>
+            # ID类型,不能为空.
+            query ($id: ID!) {
+              post(id: $id) {
+                id
+                title
+                content
+              }
+            }
+            </page-query>
+         * /
+      }
+    ]
+  }

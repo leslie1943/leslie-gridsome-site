@@ -39,6 +39,5 @@ module.exports = function (api) {
 
   // 动态路由生成
   generatePage(api, { path: '/my-page', component: 'MyPage' })
-  generatePage(api, { path: '/posts/:id(\\d+)', component: 'Posts' })
-
+  // generatePage(api, { path: '/posts/:id(\\d+)', component: 'Posts' })
 }
