@@ -1,15 +1,12 @@
 <template>
   <div>
-    <h1>Foo page</h1>
+    <h1>Post {{$route.params.id}} Page</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'FooPage',
-  metaInfo: {
-    title: 'Foo'
-  }
+  name: 'PostPage'
 }
 </script>
 
